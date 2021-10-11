@@ -5,16 +5,21 @@
 class Utern < Formula
   desc "Multi group and stream log tailing for AWS CloudWatch Logs"
   homepage "https://github.com/knqyf263/utern"
-  version "0.1.2"
+  version "0.1.3"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/knqyf263/utern/releases/download/v0.1.2/utern_0.1.2_darwin_amd64.zip"
-    sha256 "7f28300877b270bab54301a3275b7d4a8768561431d1f7e9f6b5362eed9dc5fb"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/knqyf263/utern/releases/download/v0.1.3/utern_0.1.3_darwin_amd64.zip"
+      sha256 "c92ef7f88f13f5a09038702e41383d5a950068f41d35d3c9991240abcfe1e5ed"
+    end
   end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/knqyf263/utern/releases/download/v0.1.2/utern_0.1.2_linux_amd64.zip"
-    sha256 "6b788112c7b87617a90d6876aed354ad09e4b8ae541f11151d225878ea8249cf"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/knqyf263/utern/releases/download/v0.1.3/utern_0.1.3_linux_amd64.zip"
+      sha256 "3d7b4151e9eb9483451d5470bbc5fd0337a78d51a44df0f0e42270295b21e8a1"
+    end
   end
 
   def install
