@@ -5,20 +5,28 @@
 class Utern < Formula
   desc "Multi group and stream log tailing for AWS CloudWatch Logs"
   homepage "https://github.com/knqyf263/utern"
-  version "0.1.3"
+  version "0.1.4"
   bottle :unneeded
 
   on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/knqyf263/utern/releases/download/v0.1.4/utern_0.1.4_darwin_arm64.zip"
+      sha256 "49900077f82eee929fb558e5085e3d689c104b64d6b15ecd618e42b215af2f96"
+    end
     if Hardware::CPU.intel?
-      url "https://github.com/knqyf263/utern/releases/download/v0.1.3/utern_0.1.3_darwin_amd64.zip"
-      sha256 "c92ef7f88f13f5a09038702e41383d5a950068f41d35d3c9991240abcfe1e5ed"
+      url "https://github.com/knqyf263/utern/releases/download/v0.1.4/utern_0.1.4_darwin_amd64.zip"
+      sha256 "4d0b671fd9db27c9e63ae79cdf3851a1bff91c3f08f493aea4aa39a054621ae5"
     end
   end
 
   on_linux do
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/knqyf263/utern/releases/download/v0.1.4/utern_0.1.4_linux_arm64.zip"
+      sha256 "7634d56e6e12d29752701994d48c23ee7229f059a6275969251ad285f5eabbe2"
+    end
     if Hardware::CPU.intel?
-      url "https://github.com/knqyf263/utern/releases/download/v0.1.3/utern_0.1.3_linux_amd64.zip"
-      sha256 "3d7b4151e9eb9483451d5470bbc5fd0337a78d51a44df0f0e42270295b21e8a1"
+      url "https://github.com/knqyf263/utern/releases/download/v0.1.4/utern_0.1.4_linux_amd64.zip"
+      sha256 "34562860ce1058eda65b61da0f1bf96d49eeb9995215e432d1408bbcdf326a4d"
     end
   end
 
