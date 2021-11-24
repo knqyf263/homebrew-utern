@@ -5,33 +5,44 @@
 class Utern < Formula
   desc "Multi group and stream log tailing for AWS CloudWatch Logs"
   homepage "https://github.com/knqyf263/utern"
-  version "0.1.4"
-  bottle :unneeded
+  version "0.1.5"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/knqyf263/utern/releases/download/v0.1.4/utern_0.1.4_darwin_arm64.zip"
-      sha256 "49900077f82eee929fb558e5085e3d689c104b64d6b15ecd618e42b215af2f96"
+      url "https://github.com/knqyf263/utern/releases/download/v0.1.5/utern_0.1.5_darwin_arm64.zip"
+      sha256 "9078e16d95221ac6fb8637081daf98f26aaed943faec24c28b0dd953753c1f19"
+
+      def install
+        bin.install Dir['utern']
+      end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/knqyf263/utern/releases/download/v0.1.4/utern_0.1.4_darwin_amd64.zip"
-      sha256 "4d0b671fd9db27c9e63ae79cdf3851a1bff91c3f08f493aea4aa39a054621ae5"
+      url "https://github.com/knqyf263/utern/releases/download/v0.1.5/utern_0.1.5_darwin_amd64.zip"
+      sha256 "bbded557eacc71466970c0b56684a13fb8509ff7b54b4edd984491f775befa54"
+
+      def install
+        bin.install Dir['utern']
+      end
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/knqyf263/utern/releases/download/v0.1.4/utern_0.1.4_linux_arm64.zip"
-      sha256 "7634d56e6e12d29752701994d48c23ee7229f059a6275969251ad285f5eabbe2"
+      url "https://github.com/knqyf263/utern/releases/download/v0.1.5/utern_0.1.5_linux_arm64.zip"
+      sha256 "32a98431e97f3a233e73ea13dacce0f56a1792c64c238ce7db1d917d48a669ce"
+
+      def install
+        bin.install Dir['utern']
+      end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/knqyf263/utern/releases/download/v0.1.4/utern_0.1.4_linux_amd64.zip"
-      sha256 "34562860ce1058eda65b61da0f1bf96d49eeb9995215e432d1408bbcdf326a4d"
-    end
-  end
+      url "https://github.com/knqyf263/utern/releases/download/v0.1.5/utern_0.1.5_linux_amd64.zip"
+      sha256 "29f9ba5e8874e3f37f0e0d094338b7ca4ba269b73b0cc86f6fd845c2781db435"
 
-  def install
-    bin.install Dir['utern']
+      def install
+        bin.install Dir['utern']
+      end
+    end
   end
 
   test do
