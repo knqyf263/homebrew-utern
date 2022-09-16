@@ -5,20 +5,20 @@
 class Utern < Formula
   desc "Multi group and stream log tailing for AWS CloudWatch Logs"
   homepage "https://github.com/knqyf263/utern"
-  version "0.1.5"
+  version "0.1.6"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/knqyf263/utern/releases/download/v0.1.5/utern_0.1.5_darwin_arm64.zip"
-      sha256 "9078e16d95221ac6fb8637081daf98f26aaed943faec24c28b0dd953753c1f19"
+    if Hardware::CPU.intel?
+      url "https://github.com/knqyf263/utern/releases/download/v0.1.6/utern_0.1.6_darwin_amd64.zip"
+      sha256 "36ac3810d93572e16e59eef2aea9611bf8af2d09babc7f7885d4c27f82aa1d85"
 
       def install
         bin.install Dir['utern']
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/knqyf263/utern/releases/download/v0.1.5/utern_0.1.5_darwin_amd64.zip"
-      sha256 "bbded557eacc71466970c0b56684a13fb8509ff7b54b4edd984491f775befa54"
+    if Hardware::CPU.arm?
+      url "https://github.com/knqyf263/utern/releases/download/v0.1.6/utern_0.1.6_darwin_arm64.zip"
+      sha256 "5d0c5060f0f270b13b90a75cea3c72fc1c6d7cc95f3e0e67015050029368f3fb"
 
       def install
         bin.install Dir['utern']
@@ -27,17 +27,17 @@ class Utern < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/knqyf263/utern/releases/download/v0.1.5/utern_0.1.5_linux_arm64.zip"
-      sha256 "32a98431e97f3a233e73ea13dacce0f56a1792c64c238ce7db1d917d48a669ce"
+    if Hardware::CPU.intel?
+      url "https://github.com/knqyf263/utern/releases/download/v0.1.6/utern_0.1.6_linux_amd64.zip"
+      sha256 "6491ecd506bfae227e237cd105e4f27c2a60e4301830f8750d5f4e42ac01173d"
 
       def install
         bin.install Dir['utern']
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/knqyf263/utern/releases/download/v0.1.5/utern_0.1.5_linux_amd64.zip"
-      sha256 "29f9ba5e8874e3f37f0e0d094338b7ca4ba269b73b0cc86f6fd845c2781db435"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/knqyf263/utern/releases/download/v0.1.6/utern_0.1.6_linux_arm64.zip"
+      sha256 "5f0a9bbf4ca811d7679521179db761bbfb3aa20e38afb65143799a75cef4fcec"
 
       def install
         bin.install Dir['utern']
